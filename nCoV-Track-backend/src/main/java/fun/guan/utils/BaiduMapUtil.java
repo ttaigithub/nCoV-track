@@ -19,7 +19,7 @@ public class BaiduMapUtil {
     /**
      * 百度应用ak
      */
-    private String ak = "WyVTOuzW1xE3s6rqedhQTIABH7AE5SAZ";
+    private static String ak = "";
 
     public static Map<String, BigDecimal> getLatAndLngByAddress(String addr) {
         String address = "";
@@ -29,7 +29,7 @@ public class BaiduMapUtil {
             e1.printStackTrace();
         }
         String url = String.format("http://api.map.baidu.com/place/v2/search?"
-                +"ak=WyVTOuzW1xE3s6rqedhQTIABH7AE5SAZ&output=json&query=%s&region=全国",address);
+                +"ak=%s&output=json&query=%s&region=全国",ak,address);
         URL myURL = null;
         URLConnection httpsConn = null;
         //进行转码
