@@ -24,10 +24,7 @@ import fun.guan.service.PathLocationService;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class PathLocationServiceImpl implements PathLocationService {
@@ -263,6 +260,92 @@ public class PathLocationServiceImpl implements PathLocationService {
             voList.add(vo);
         }
         return voList;
+    }
+
+    @Override
+    public Map<Integer, Object> queryLocationByTime(String data) {
+        JsonObject dataJson = new JsonParser().parse(data).getAsJsonObject();
+        Long startTime = dataJson.get("startTime").getAsLong();
+        Long endTime = dataJson.get("endTime").getAsLong();
+        List<PathLocation> pathLocationList = new ArrayList<>();
+        int state;
+        if (dataJson.get("state")!=null){
+            state = dataJson.get("state").getAsInt();
+            pathLocationList = this.pathLocationMapper.selectByTimeAndState(new Date(startTime),new Date(endTime),state);
+            Map<Integer,Object> vo = new HashMap<>();
+            for (int i=0;i<pathLocationList.size();i++){
+                PathLocation pathLocation = pathLocationList.get(i);
+                List<String> locationList = new ArrayList<>();
+                locationList.add(pathLocation.getDepartureLocation());
+                locationList.add(pathLocation.getDestinationLocation());
+                vo.put(i,locationList);
+            }
+            return vo;
+        }else {
+            List<PathLocation> pathLocation0 = this.pathLocationMapper
+                    .selectByTimeAndState(new Date(startTime),new Date(endTime),0);
+            List<PathLocation> pathLocation1 = this.pathLocationMapper
+                    .selectByTimeAndState(new Date(startTime),new Date(endTime),1);
+            List<PathLocation> pathLocation2 = this.pathLocationMapper
+                    .selectByTimeAndState(new Date(startTime),new Date(endTime),2);
+            List<PathLocation> pathLocation3 = this.pathLocationMapper
+                    .selectByTimeAndState(new Date(startTime),new Date(endTime),3);
+            List<PathLocation> pathLocation4 = this.pathLocationMapper
+                    .selectByTimeAndState(new Date(startTime),new Date(endTime),4);
+            Map<Integer,Object> vo = new HashMap<>();
+//            Map<Integer,Object> vo0 = new HashMap<>();
+//            Map<Integer,Object> vo1 = new HashMap<>();
+//            Map<Integer,Object> vo2 = new HashMap<>();
+//            Map<Integer,Object> vo3 = new HashMap<>();
+//            Map<Integer,Object> vo4 = new HashMap<>();
+            List<Object> vo0 = new LinkedList<>();
+            List<Object> vo1 = new LinkedList<>();
+            List<Object> vo2 = new LinkedList<>();
+            List<Object> vo3 = new LinkedList<>();
+            List<Object> vo4 = new LinkedList<>();
+            for (int i=0;i<pathLocation0.size();i++){
+                PathLocation pathLocation = pathLocation0.get(i);
+                List<String> locationList = new ArrayList<>();
+                locationList.add(pathLocation.getDepartureLocation());
+                locationList.add(pathLocation.getDestinationLocation());
+                vo0.add(locationList);
+            }
+            for (int i=0;i<pathLocation1.size();i++){
+                PathLocation pathLocation = pathLocation1.get(i);
+                List<String> locationList = new ArrayList<>();
+                locationList.add(pathLocation.getDepartureLocation());
+                locationList.add(pathLocation.getDestinationLocation());
+                vo1.add(locationList);
+            }
+            for (int i=0;i<pathLocation2.size();i++){
+                PathLocation pathLocation = pathLocation2.get(i);
+                List<String> locationList = new ArrayList<>();
+                locationList.add(pathLocation.getDepartureLocation());
+                locationList.add(pathLocation.getDestinationLocation());
+                vo2.add(locationList);
+            }
+            for (int i=0;i<pathLocation3.size();i++){
+                PathLocation pathLocation = pathLocation3.get(i);
+                List<String> locationList = new ArrayList<>();
+                locationList.add(pathLocation.getDepartureLocation());
+                locationList.add(pathLocation.getDestinationLocation());
+                vo3.add(locationList);
+            }
+            for (int i=0;i<pathLocation4.size();i++){
+                PathLocation pathLocation = pathLocation4.get(i);
+                List<String> locationList = new ArrayList<>();
+                locationList.add(pathLocation.getDepartureLocation());
+                locationList.add(pathLocation.getDestinationLocation());
+                vo4.add(locationList);
+            }
+            vo.put(0,vo0);
+            vo.put(1,vo1);
+            vo.put(2,vo2);
+            vo.put(3,vo3);
+            vo.put(4,vo4);
+            return vo;
+        }
+
     }
 }
 

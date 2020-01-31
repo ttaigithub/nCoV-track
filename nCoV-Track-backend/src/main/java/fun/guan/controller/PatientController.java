@@ -43,7 +43,6 @@ public class PatientController {
         return new ResponseResult<>(ResultEnum.SUCCESS.getCode(),ResultEnum.SUCCESS.getMsg());
     }
 
-
     @ApiOperation(value = "query", notes = "患者信息查询，示例json：" +
             "\n{\"pageNum\":\"1\",\"pageSize\":1}")
     @PostMapping(value = "query")

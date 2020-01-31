@@ -11,7 +11,7 @@ public class BaiduMapUtilTest {
     @Test
     public void test(){
         BaiduMapUtil baiduMapUtil = new BaiduMapUtil();
-        Map<String, BigDecimal> result = baiduMapUtil.getLatAndLngByAddress("广西贵港市");
-        System.out.println(new Gson().toJson(result));
+        String result = baiduMapUtil.getLatAndLng("上海市");
+        System.out.println(result);
     }
 }

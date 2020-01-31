@@ -6,6 +6,7 @@ import fun.guan.pojo.vo.PathLocationVO;
 import fun.guan.pojo.vo.TwoPlaceVO;
 
 import java.util.List;
+import java.util.Map;
 
 public interface PathLocationService {
 
@@ -21,5 +22,7 @@ public interface PathLocationService {
     void update(String data);
 
     List<TwoPlaceVO> queryByTime(String data);
+
+    Map<Integer, Object> queryLocationByTime(String data);
 }
 

@@ -20,4 +20,10 @@
     record_id, patient_id, appear_time, departure, destination, departure_location, destination_location, 
     is_delete, gmt_create, gmt_modified
   </sql>
+    <select id="selectByTimeAndState" resultMap="BaseResultMap">
+      select * from path_location
+      where appear_time &gt; #{startTime}
+      and appear_time &lt; #{endTime}
+      and patient_id = any(select record_id from patient where state = #{state});
+    </select>
 </mapper>
