@@ -1,0 +1,72 @@
+server:
+  port: 8102
+  servlet:
+    context-path: /guan
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: username
+    password: password
+    druid:
+      initial-size: 5
+      min-idle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 1 from dual
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      filter:
+        stat:
+          enabled: true
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 2000
+      maxPoolPreparedStatementPerConnectionSize: 20
+      useGlobalDataSourceStat: true
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      # 监控过滤器
+      web-stat-filter:
+        enabled: true
+        exclusions:
+          - "*.js"
+          - "*.gif"
+          - "*.jpg"
+          - "*.png"
+          - "*.css"
+          - "*.ico"
+          - "/druid/*"
+      # druid 监控页面
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: root
+        login-password: root
+  jackson:
+    time-zone: GMT+8
+#  redis:
+#    database: 0
+#    host:
+#    port: 6379
+#    password:
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-wait: -1
+#        max-idle: 8
+#        min-idle: 0
+#    timeout: 5000
+
+mybatis:
+  type-aliases-package: fun.guan.entity
+  mapper-locations: classpath:mapper/*.xml
+
+
+taisecurity:
+  jwtSeed: 146dhuhguaih

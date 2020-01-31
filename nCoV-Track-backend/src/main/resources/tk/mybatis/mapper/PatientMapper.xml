@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fun.guan.mapper.PatientMapper">
+  <resultMap id="BaseResultMap" type="fun.guan.entity.Patient">
+    <!--@mbg.generated generated on Wed Jan 29 23:17:46 CST 2020.-->
+    <!--@Table patient-->
+    <id column="record_id" jdbcType="BIGINT" property="recordId" />
+    <result column="patient_name" jdbcType="VARCHAR" property="patientName" />
+    <result column="sex" jdbcType="BIT" property="sex" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="confirmed_time" jdbcType="TIMESTAMP" property="confirmedTime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="is_delete" jdbcType="BOOLEAN" property="isDelete" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Wed Jan 29 23:17:46 CST 2020.-->
+    record_id, patient_name, sex, age, confirmed_time, `state`, is_delete, gmt_create, 
+    gmt_modified
+  </sql>
+</mapper>
