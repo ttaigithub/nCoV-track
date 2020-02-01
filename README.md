@@ -66,3 +66,7 @@
 nCoV病毒追踪系统后端——[nCoV-Track-backend](https://github.com/ttaigithub/nCoV-track/tree/master/nCoV-Track-backend)
 
 nCoV病毒追踪系统前端——[nCoV-Track-fontend](https://github.com/ttaigithub/nCoV-track/tree/master/nCoV-Track-fontend)
+
+
+
+​		**因数据接口较为敏感，为避免不必要的恐慌，我们暂时不提供确诊及疑似患者活动数据的录入接口。仅当政府或防疫部门在实际使用时，我们会免费提供其余模块及接口，并提供全部的后续支持。**
