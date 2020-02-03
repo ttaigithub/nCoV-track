@@ -1,4 +1,4 @@
-# Decision-making platform for prevention and control of big data of epidemic-[中文](https://github.com/ttaigithub/nCoV-track/blob/master/README.md)
+# Decision-making platform for prevention and control of big data of epidemic-[涓枃](https://github.com/ttaigithub/nCoV-track/blob/master/README.md)
 ## Description
 Because of the high infectivity of new coronaviruses among people, we designed a framework of big data platform for retrospective monitoring and prediction of human-to-human transmission, which can effectively restore the activity trajectory of diagnosed patients, suspected patients and possible contacts during the incubation period, and present it intuitively. We hope it will be helpful for decision making.
 
@@ -32,12 +32,12 @@ The platform shall not be responsible for any adverse consequences caused by the
 Thank you to all who have expressed concern about the outbreak of the new coronavirus. We will try our best to provide corresponding technical support and resources. At the same time, I beg your understanding, because the production time is in a hurry, please timely point out the shortcomings and a lot of understanding. 
 
 
-2020年1月31日
+2020脛锚1脭脗31脠脮
 Tong Tai Tech's emergency response team
 ## Code:
 
-NCoV virus tracking system server side：[nCoV-Track-backend](https://github.com/ttaigithub/nCoV-track/tree/master/nCoV-Track-backend)
+NCoV virus tracking system server side拢潞[nCoV-Track-backend](https://github.com/ttaigithub/nCoV-track/tree/master/nCoV-Track-backend)
 
-NCoV virus tracking system web side：[nCoV-Track-fontend](https://github.com/ttaigithub/nCoV-track/tree/master/nCoV-Track-fontend)
+NCoV virus tracking system web side拢潞[nCoV-Track-fontend](https://github.com/ttaigithub/nCoV-track/tree/master/nCoV-Track-fontend)
 
 Due to the sensitive data interface, to avoid unnecessary panic, we temporarily do not provide input interfaces for activity data of confirmed and suspected patients. We will provide the remaining modules and interfaces free of charge and provide all follow-up support only when the government or epidemic prevention department is using them.
