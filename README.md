@@ -1,4 +1,4 @@
-# 传染类疫情大数据监控防治决策平台框架
+# 传染类疫情大数据监控防治决策平台框架[English](https://github.com/ttaigithub/nCoV-track/blob/master/README-en.md)
 
 ## 项目名称：传染类疫情大数据监控防治决策平台框架
 
