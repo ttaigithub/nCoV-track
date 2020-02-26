@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fun.guan.mapper.PatientLocationMapper">
+  <resultMap id="BaseResultMap" type="fun.guan.entity.PatientLocation">
+    <!--@mbg.generated generated on Fri Feb 14 14:27:53 CST 2020.-->
+    <!--@Table patient_location-->
+    <id column="record_id" jdbcType="BIGINT" property="recordId" />
+    <result column="patient_id" jdbcType="BIGINT" property="patientId" />
+    <result column="last_place_id" jdbcType="BIGINT" property="lastPlaceId" />
+    <result column="next_place_id" jdbcType="BIGINT" property="nextPlaceId" />
+    <result column="appear_time" jdbcType="TIMESTAMP" property="appearTime" />
+    <result column="departurer_time" jdbcType="TIMESTAMP" property="departurerTime" />
+    <result column="place" jdbcType="VARCHAR" property="place" />
+    <result column="lng" jdbcType="DECIMAL" property="lng" />
+    <result column="lat" jdbcType="DECIMAL" property="lat" />
+    <result column="is_delete" jdbcType="BOOLEAN" property="isDelete" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Fri Feb 14 14:27:53 CST 2020.-->
+    record_id, patient_id, last_place_id, next_place_id, appear_time, departurer_time, 
+    place, lng, lat, is_delete, gmt_create, gmt_modified
+  </sql>
+</mapper>
